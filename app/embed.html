@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자료 벡터 만들기 · 피지컬그라운드 (개발용)</title>
+    <style>
+      body { font-family: system-ui, sans-serif; max-width: 760px; margin: 2rem auto; padding: 0 16px; line-height: 1.6; }
+      button { font-size: 1rem; padding: .6rem 1.2rem; cursor: pointer; }
+      pre { background: #f4f4f5; padding: 1rem; white-space: pre-wrap; font-size: .85rem; }
+      .ok { color: #15803d; } .bad { color: #b91c1c; }
+    </style>
+  </head>
+  <body>
+    <h1>자료 벡터 만들기 (개발용)</h1>
+    <p>
+      <code>data/pg-chunks.json</code>의 청크를 <strong>챗봇이 질문에 쓰는 것과 똑같은 브라우저 경로</strong>
+      (embeddinggemma-300m <code>model_no_gather_q4</code>, mean pooling, 정규화)로 768차원 벡터로 바꿔
+      <code>public/pg-docs.json</code>에 저장합니다. 개발 서버(<code>npm run dev</code>)에서만 동작하고, 배포 결과물에는 들어가지 않습니다.
+    </p>
+    <button id="run">벡터 만들기 시작</button>
+    <pre id="log">대기 중…</pre>
+    <script type="module" src="/src/embed-docs.ts"></script>
+  </body>
+</html>
